@@ -1,0 +1,375 @@
+/* Landing page — WDD 131 */
+
+:root {
+  --bg: #f4f1ec;
+  --bg-deep: #e8e2da;
+  --ink: #1c1917;
+  --muted: #57534e;
+  --accent: #0c4a6e;
+  --accent-soft: #0369a1;
+  --card: #fffef9;
+  --card-border: #d6d0c8;
+  --focus: #0c4a6e;
+  --radius: 14px;
+  --shadow: 0 4px 24px rgba(28, 25, 23, 0.06);
+  --shadow-hover: 0 8px 32px rgba(28, 25, 23, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Outfit", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  background-image: radial-gradient(
+    ellipse 120% 80% at 50% -20%,
+    #fff 0%,
+    transparent 55%
+  );
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  padding: 0.5rem 1rem;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 6px;
+  z-index: 10;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.page {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+.hero h1 {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(1.75rem, 4.5vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+  color: var(--ink);
+}
+
+.name {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--accent-soft);
+  margin: 0 0 1rem;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 0;
+  max-width: 28ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lead {
+  text-align: center;
+  color: var(--muted);
+  margin: 0 0 2rem;
+  font-size: 0.98rem;
+}
+
+.lead strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.nav-cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  display: block;
+  padding: 1.35rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+
+/* Round, larger arrow only (cards keep default size) */
+.nav-cards .card__desc {
+  padding-right: 4.25rem;
+}
+
+.nav-cards .card__arrow {
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3.15rem;
+  height: 3.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  background: rgba(12, 74, 110, 0.08);
+  border-radius: 50%;
+  opacity: 0.95;
+  transition:
+    transform 0.22s ease,
+    opacity 0.2s,
+    background 0.2s;
+}
+
+.nav-cards .card__arrow .card__chevron {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-left: 1px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.nav-cards .card:hover .card__arrow {
+  transform: translate(4px, -50%);
+  opacity: 1;
+  background: rgba(12, 74, 110, 0.14);
+}
+
+.card:hover {
+  border-color: #b9b0a4;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.card:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.card__label {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 600;
+  font-family: "Source Serif 4", Georgia, serif;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.card__desc {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding-right: 2rem;
+}
+
+.card__arrow {
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+  opacity: 0.6;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.card__arrow .card__chevron {
+  display: block;
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+/* Default arrow nudge; .nav-cards .card:hover .card__arrow overrides (higher specificity) */
+.card:hover .card__arrow {
+  transform: translate(3px, -50%);
+  opacity: 1;
+}
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+  border-top: 1px solid var(--card-border);
+}
+
+.footer__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 1.25rem;
+}
+
+.github-iframe {
+  display: block;
+  overflow: hidden;
+  border: 0;
+  max-width: 100%;
+}
+
+/* Matches ghbtns “large” control height (30px) for a clean row. */
+.github-btn {
+  --gh-btn: #1f2328;
+  --gh-btn-hi: #2d333b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 0.4rem;
+  min-height: 30px;
+  height: 30px;
+  padding: 0 11px 0 9px;
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  color: #f0f3f5;
+  background: var(--gh-btn);
+  background-image: linear-gradient(180deg, #2d3338 0%, var(--gh-btn) 100%);
+  border: 1px solid rgba(1, 4, 9, 0.85);
+  border-radius: 6px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 1px 2px rgba(0, 0, 0, 0.12);
+  transition:
+    background 0.18s,
+    box-shadow 0.18s,
+    border-color 0.18s,
+    color 0.18s;
+}
+
+.github-btn:hover {
+  color: #fff;
+  text-decoration: none;
+  background: var(--gh-btn-hi);
+  background-image: linear-gradient(180deg, #3d444c 0%, var(--gh-btn-hi) 100%);
+  border-color: #010409;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.github-btn:active {
+  background-image: linear-gradient(180deg, #1a1e24 0%, #1f2328 100%);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset;
+}
+
+.github-btn:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.github-btn__icon {
+  display: flex;
+  flex-shrink: 0;
+  margin-top: 1px;
+  opacity: 0.95;
+}
+
+.github-btn__icon svg {
+  display: block;
+}
+
+.github-btn__text {
+  position: relative;
+  top: 0.5px;
+}
+
+.github-btn__newtab {
+  margin-left: 0.1rem;
+  font-size: 0.7rem;
+  line-height: 1;
+  opacity: 0.5;
+  font-weight: 500;
+}
+
+.github-btn:hover .github-btn__newtab {
+  opacity: 0.8;
+}
+
+/* Interior pages (Prove / Ponder index) */
+.subpage .hero {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.subpage .hero h1 {
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+}
+
+.ponder-list {
+  margin-top: 0.5rem;
+}
+
+.lead--tight {
+  margin-bottom: 1rem;
+}
+
+.subpage-back {
+  margin-bottom: 0;
+}
+
+.subpage-back--after-nav {
+  margin-top: 1.5rem;
+}
+
+.back-link {
+  color: var(--accent-soft);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.back-link:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}

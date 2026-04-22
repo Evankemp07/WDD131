@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://evankemp07.github.io/WDD131/sitemap.xml

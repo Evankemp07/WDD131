@@ -1,0 +1,44 @@
+# Regenerates sitemap.xml and robots.txt from every .html in the repo.
+# Skips running when a push only changes those two files
+# uses [skip ci] to avoid a loop.
+
+name: Sitemap
+
+on:
+  push:
+    branches: [main, master]
+    paths-ignore:
+      - sitemap.xml
+      - robots.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sitemap
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Generate sitemap and robots
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 scripts/generate_sitemap.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml robots.txt
+          if git diff --staged --quiet; then
+            echo "Sitemap and robots are up to date."
+            exit 0
+          fi
+          git commit -m "chore: regenerate sitemap and robots [skip ci]"
+          git push
