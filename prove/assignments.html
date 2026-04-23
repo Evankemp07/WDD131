@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Prove assessments, weekly work, and project submissions for WDD 131."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Prove | WDD 131 — Evan Kemp</title>
     <link rel="stylesheet" href="../styles.css" />
@@ -15,13 +19,28 @@
       </header>
       <main>
         <p class="lead lead--tight">
-          Weekly Prove assessments and project submissions for this site are
-          listed below; the list is updated as each deliverable is completed.
+          Weekly Prove assessments and project submissions. The cards below are
+          built from
+          <code class="sitemap-nav__code">sitemap.xml</code>, which GitHub
+          Actions updates when you add or change
+          <code class="sitemap-nav__code">.html</code> files in the repository.
         </p>
+        <nav
+          class="nav-cards"
+          aria-label="Prove projects"
+          data-sitemap-nav
+          data-sitemap-href="../sitemap.xml"
+          data-sitemap-mode="list"
+          data-sitemap-prefix="prove/"
+          data-sitemap-exclude="prove/assignments.html"
+        >
+          <p class="sitemap-nav__status" role="status">Loading Prove projects…</p>
+        </nav>
         <p class="lead subpage-back">
           <a href="../index.html" class="back-link">← Back to home</a>
         </p>
       </main>
     </div>
+    <script src="../js/sitemap-nav.js" defer></script>
   </body>
 </html>

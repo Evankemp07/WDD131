@@ -373,3 +373,24 @@ body {
   outline-offset: 2px;
   border-radius: 2px;
 }
+
+/* sitemap-nav.js: loading and errors */
+.sitemap-nav__status {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-align: center;
+  padding: 0.5rem 0 1rem;
+}
+
+.sitemap-nav__status--error {
+  color: #9a3412;
+}
+
+.sitemap-nav__code {
+  font-size: 0.85em;
+  background: var(--bg-deep);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-weight: 500;
+}

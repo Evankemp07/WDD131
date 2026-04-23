@@ -1,0 +1,103 @@
+/* BYU-Idaho mission statement */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2.5rem 1.25rem 3rem;
+  background: #ffffff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #000000;
+}
+
+.page {
+  width: 100%;
+  max-width: 44rem;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 3rem 7rem 3.5rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.h {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+.p {
+  margin: 0;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0062b8;
+  line-height: 1.15;
+}
+
+.hr {
+  margin: 0.55rem 0 0;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  width: 100%;
+}
+
+.content {
+  max-width: 36rem;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.p-intro {
+  margin: 0 0 1.35rem;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.p-lead {
+  margin: 0 0 0.85rem;
+  font-style: italic;
+}
+
+.ol {
+  margin: 0;
+  padding-left: 1.35rem;
+}
+
+.ol li {
+  margin-bottom: 0.95rem;
+  padding-left: 0.35rem;
+}
+
+.ol li:last-child {
+  margin-bottom: 0;
+}
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
+.img {
+  display: inline-block;
+  max-width: 12.5rem;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
