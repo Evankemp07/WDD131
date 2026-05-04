@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Responsive image gallery with dialog modal and full-size previews."
+    />
+    <meta name="author" content="Evan Kemp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modals — Gallery</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link href="modal.css" rel="stylesheet" />
+    <script src="modal.js" defer></script>
+  </head>
+  <body>
+    <h1>Gallery</h1>
+    <section class="gallery">
+      <figure>
+        <img src="images/book-sm.jpg" alt="person reading a book" />
+      </figure>
+      <figure>
+        <img
+          src="images/couch-sm.jpg"
+          alt="person sitting on a couch with a phone"
+        />
+      </figure>
+      <figure>
+        <img src="images/desk-sm.jpg" alt="a work desktop" />
+      </figure>
+      <figure>
+        <img src="images/keyboard-sm.jpg" alt="person typing on a keyboard" />
+      </figure>
+      <figure>
+        <img src="images/phone-sm.jpg" alt="person looking at a phone" />
+      </figure>
+      <figure>
+        <img src="images/sit-sm.jpg" alt="person sitting on a couch" />
+      </figure>
+    </section>
+    <dialog>
+      <img alt="" />
+      <button type="button" class="close-viewer" aria-label="Close viewer">
+        X
+      </button>
+    </dialog>
+  </body>
+</html>
