@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Cool Pics — responsive gallery with mobile-first layout and CSS media queries."
+      content="Cool Pics — responsive gallery, mobile menu, and image modal."
     />
     <meta name="author" content="Evan Kemp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,12 +14,24 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
     <link href="coolpics.css" rel="stylesheet" />
+    <script src="coolpics.js" defer></script>
   </head>
   <body>
     <header class="site-header">
       <h1 class="site-title">Cool Pics 📷</h1>
-      <p class="menu-label">Menu</p>
-      <nav class="site-nav" aria-label="Primary">
+      <button
+        type="button"
+        class="menu-btn"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        Menu
+      </button>
+      <nav
+        id="primary-nav"
+        class="site-nav hide"
+        aria-label="Primary"
+      >
         <a href="#">Home</a>
         <a href="#">People</a>
         <a href="#">Places</a>
@@ -116,6 +128,13 @@
         </div>
       </section>
     </main>
+
+    <dialog>
+      <img alt="" />
+      <button type="button" class="close-viewer" aria-label="Close viewer">
+        X
+      </button>
+    </dialog>
 
     <footer class="site-footer">
       <p>©2026 Evan Kemp</p>
