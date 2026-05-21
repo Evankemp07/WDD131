@@ -49,12 +49,8 @@ footer {
   margin: 0 auto;
 }
 
-/* Mobile-first: stacked card — title, poster, details, description */
+/* Mobile-first (no grid): stacks in DOM order like the lecture starter */
 .movie {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.75rem;
-  justify-items: center;
   max-width: 700px;
   margin: 1.25rem auto;
   padding: 1.25rem;
@@ -70,13 +66,10 @@ footer {
   height: auto;
   display: block;
   border-radius: 8px;
-  grid-column: 1;
-  grid-row: 2;
+  margin: 0.75rem auto;
 }
 
 .movie h2 {
-  grid-column: 1;
-  grid-row: 1;
   margin: 0;
   padding: 0;
   color: #b30059;
@@ -84,43 +77,19 @@ footer {
   font-weight: 700;
   text-align: center;
   line-height: 1.25;
-  justify-self: stretch;
 }
 
 .movie > p:not(.movie-desc) {
-  grid-column: 1;
   margin: 0;
-  justify-self: stretch;
-  width: 100%;
+  padding: 0.15rem 0 0;
   text-align: left;
-  padding-left: 0;
-}
-
-.movie > p:not(.movie-desc):nth-of-type(1) {
-  grid-row: 3;
-}
-
-.movie > p:not(.movie-desc):nth-of-type(2) {
-  grid-row: 4;
-}
-
-.movie > p:not(.movie-desc):nth-of-type(3) {
-  grid-row: 5;
-}
-
-.movie > p:not(.movie-desc):nth-of-type(4) {
-  grid-row: 6;
 }
 
 .movie-desc {
-  grid-column: 1;
-  grid-row: 7;
-  margin: 0.35rem 0 0;
+  margin: 0.65rem 0 0;
   padding: 0;
   text-align: left;
   color: #111;
-  justify-self: stretch;
-  width: 100%;
 }
 
 .stars {
@@ -131,36 +100,44 @@ footer {
 /* Larger devices: nav row + two-column card top + full-width description */
 @media (min-width: 600px) {
   .main-nav {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem 1.5rem;
+    align-items: center;
+    justify-items: center;
+    gap: 0.5rem 1rem;
   }
 
   .movie {
-    grid-template-columns: minmax(160px, 200px) 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(5, auto) auto;
     gap: 0.5rem 1.25rem;
+    justify-items: center;
     align-items: start;
-    justify-items: stretch;
   }
 
   .movie img {
-    grid-column: 1;
+    grid-column: 1 / 2;
     grid-row: 1 / 6;
-    max-width: 200px;
+    width: 100%;
+    max-width: 100%;
     justify-self: center;
+    margin: 0;
   }
 
   .movie h2 {
     grid-column: 2;
     grid-row: 1;
-    text-align: left;
+    text-align: center;
+    justify-self: stretch;
+    width: 100%;
   }
 
   .movie > p:not(.movie-desc) {
     grid-column: 2;
-    width: auto;
+    width: 100%;
+    justify-self: stretch;
   }
 
   .movie > p:not(.movie-desc):nth-of-type(1) {
@@ -180,9 +157,10 @@ footer {
   }
 
   .movie-desc {
-    grid-column: 1 / -1;
+    grid-column: 1 / 3;
     grid-row: 6;
-    width: auto;
+    justify-self: stretch;
+    width: 100%;
     margin-top: 0.5rem;
   }
 }
