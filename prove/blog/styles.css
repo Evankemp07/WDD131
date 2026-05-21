@@ -1,10 +1,7 @@
-/* Typography: serif for titles + body like the reference layout */
-
 :root {
   --font-serif: Georgia, "Times New Roman", Times, serif;
   --color-bg: #ffffff;
   --color-heading: #1a1a1a;
-  /* Pink-red navigational accents — kept dark enough for ~4.5:1 contrast on white */
   --color-accent: #aa335a;
   --color-accent-hover: #861f43;
   --color-accent-focus: #0b4f8c;
@@ -14,13 +11,10 @@
   --color-stars: #d4af12;
   --content-max-width: 56rem;
   --page-padding-x: 1rem;
-  /* Shared gutter: nav, title text, main, footer text, divider lines */
   --layout-gutter-inline: var(--page-padding-x);
-  /* Vertical rhythm: lg = section gaps, md = band padding, sm = stacks under horizontal rules */
   --layout-block-gap-md: 1rem;
   --layout-block-gap-lg: 1.25rem;
   --layout-block-gap-sm: 0.65rem;
-  /* Extra inset for article-only (beyond main gutters) */
   --post-padding-inline-extra: 0.875rem;
 }
 
@@ -80,14 +74,11 @@ img {
   width: 100%;
   max-width: none;
   margin: 0;
-  /* Side padding stays off the shell so header/footer rules span the viewport */
   padding: var(--layout-block-gap-lg) 0 2rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
-/* Narrow reading column centered; header/footer are full bleed above/below */
 
 .site-main {
   width: 100%;
@@ -97,12 +88,9 @@ img {
   padding: var(--layout-block-gap-lg) var(--layout-gutter-inline) 2rem;
 }
 
-/* Header: centered title → rule → nav row → rule (matches reference screenshot) */
-
 .site-header {
   width: 100%;
   box-sizing: border-box;
-  /* Horizontal inset on .site-title + .site-nav only — title stripe + rules span viewport width */
   padding-inline: 0;
   margin-inline: 0;
   display: flex;
@@ -160,8 +148,6 @@ img {
   border-radius: 2px;
   text-decoration: none;
 }
-
-/* Main article: responsive grid */
 
 .post {
   display: grid;
@@ -229,8 +215,6 @@ img {
   max-width: 42rem;
 }
 
-/* Mobile-only: full-bleed line like header rules; vertical rhythm matches nav band (sm above, md below) */
-
 .meta-rating-divider {
   display: block;
   flex-shrink: 0;
@@ -244,7 +228,6 @@ img {
   margin-inline: calc(
     -1 * (var(--layout-gutter-inline) + var(--post-padding-inline-extra))
   );
-  /* Extra space above (sm + 1rem + 4px tweak) */
   margin-block: calc(var(--layout-block-gap-sm) + 1rem + 0.25rem)
     var(--layout-block-gap-md);
   padding: 0;
@@ -252,8 +235,6 @@ img {
   border-top: 2px solid var(--color-line);
   background: transparent;
 }
-
-/* Vertical spine — desktop only; hidden on small screens */
 
 .post-divider {
   display: none;
@@ -278,7 +259,6 @@ img {
     background-color: var(--color-line);
   }
 
-  /* Meta | spine | body — spine stretches with the row so the rule is never short */
   .post {
     grid-template-columns: minmax(7.5rem, 1fr) 2px minmax(0, 3fr);
     gap: 0 1.75rem;
