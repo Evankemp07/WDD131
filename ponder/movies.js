@@ -50,8 +50,7 @@ const movies = [
 const movieList = document.getElementById("movie-list");
 
 movies.forEach((movie) => {
-  const movieCard = `
-    <article class="movie">
+  const html = `
       <h2>${movie.title}</h2>
       <img src="${movie.imgSrc}" alt="${movie.imgAlt}" width="200" height="300">
       <p><strong>Release Date:</strong> ${movie.date}</p>
@@ -59,7 +58,10 @@ movies.forEach((movie) => {
       <p><strong>Genre:</strong> ${movie.genre}</p>
       <p><strong>Rating:</strong> <span class="stars" role="img" aria-label="${movie.stars.length} out of 5 stars">${movie.stars}</span></p>
       <p class="movie-desc">${movie.description}</p>
-    </article>
   `;
-  movieList.innerHTML += movieCard;
+
+  const article = document.createElement("article");
+  article.classList.add("movie");
+  article.innerHTML = html;
+  movieList.appendChild(article);
 });
