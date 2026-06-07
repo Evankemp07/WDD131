@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Card</title>
+  <meta name="description" content="A JavaScript character card using objects, properties, and methods.">
+
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Character Card">
+  <meta property="og:description" content="A JavaScript character card with attack and level up methods.">
+  <meta property="og:url" content="https://evankemp07.github.io/WDD131/prove/charactercard/">
+  <meta property="og:image" content="https://evankemp07.github.io/WDD131/prove/charactercard/images/swamp-beast-diplomat.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Character Card">
+  <meta name="twitter:description" content="A JavaScript character card with attack and level up methods.">
+  <meta name="twitter:image" content="https://evankemp07.github.io/WDD131/prove/charactercard/images/swamp-beast-diplomat.webp">
+
+  <!-- One favicon (ICO works everywhere) -->
+  <link rel="icon" href="https://evankemp07.github.io/WDD131/favicon.ico">
+
+  <!-- One Apple Touch Icon (iOS home screen) -->
+  <link rel="apple-touch-icon" href="https://evankemp07.github.io/WDD131/images/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <section class="card">
+      <img id="characterImage" src="" alt="">
+      <div class="card-title">
+        <h1 id="characterName"></h1>
+      </div>
+      <div class="card-details">
+        <p><strong>Class:</strong> <span id="characterClass"></span></p>
+        <p><strong>Level:</strong> <span id="characterLevel"></span></p>
+        <p><strong>Health:</strong> <span id="characterHealth"></span></p>
+        <div class="buttons">
+          <button id="attackButton">Attack</button>
+          <button id="levelButton">Level Up</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
