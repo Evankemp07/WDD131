@@ -88,6 +88,11 @@ img {
   padding: var(--layout-block-gap-lg) var(--layout-gutter-inline) 2rem;
 }
 
+#article-list {
+  display: grid;
+  gap: 2.75rem;
+}
+
 .site-header {
   width: 100%;
   box-sizing: border-box;
