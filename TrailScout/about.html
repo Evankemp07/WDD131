@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Learn about TrailScout Hike Finder and its mission to help hikers discover trails.">
+  <title>About TrailScout | Hike Finder</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/script.js" defer></script>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="brand">
+        <a href="index.html" class="brand-link">
+          <img src="images/logo.svg" alt="TrailScout Hike Finder logo" class="logo-image">
+          <span class="brand-name">TrailScout Hike Finder</span>
+        </a>
+      </div>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mainNavigation"
+      >
+        Menu
+      </button>
+
+      <nav class="main-navigation" id="mainNavigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="favorites.html">Favorited Hikes</a>
+        <a href="about.html" class="active" aria-current="page">About</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>About TrailScout</h2>
+      <p>
+        TrailScout was created to make finding the right hiking trail easier.
+        Our goal is to help hikers compare trail difficulty, distance, location,
+        and features before heading outdoors.
+      </p>
+    </section>
+
+    <main class="main-content">
+      <section class="story-section">
+        <img
+          class="story-image"
+          src="images/story.jpg"
+          alt="Backpackers hiking together on a forest trail"
+        >
+
+        <div class="story-text">
+          <h3>Our Story</h3>
+          <p>
+            TrailScout began as a simple idea: create one place where hikers can
+            quickly find trails that match their experience level and interests.
+            Planning a hike should be simple, even when someone is using a phone
+            while traveling.
+          </p>
+          <p>
+            The app brings useful trail details together and allows users to
+            filter and sort hikes. This makes it easier to choose a trail that
+            fits the time, distance, and difficulty they are looking for.
+          </p>
+        </div>
+      </section>
+
+      <section class="values-section">
+        <h3>Our Core Values</h3>
+
+        <div class="values-grid">
+          <article class="value-card">
+            <div class="icon" aria-hidden="true">↗</div>
+            <h4>Exploration</h4>
+            <p>
+              We encourage people to discover new trails, landscapes, and
+              outdoor experiences.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <div class="icon" aria-hidden="true">✓</div>
+            <h4>Safety</h4>
+            <p>
+              We provide clear trail difficulty, distance, and hiking information
+              to support better planning.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <div class="icon" aria-hidden="true">●</div>
+            <h4>Community</h4>
+            <p>
+              We help hikers share trail ideas and build a welcoming outdoor
+              community.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section">
+        <h3>Have questions or trail suggestions?</h3>
+        <p>
+          Contact us to ask a question, report incorrect trail information, or
+          suggest a hike that should be added to TrailScout.
+        </p>
+        <button class="contact-button" id="contactButton" type="button">
+          Contact Us
+        </button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <img src="images/logo.svg" alt="" class="footer-logo-image" aria-hidden="true">
+      <p>TrailScout Hike Finder</p>
+      <p>&copy; <span id="currentYear"></span> TrailScout. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

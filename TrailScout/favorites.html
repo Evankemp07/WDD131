@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="View your favorited hikes and save personal notes with TrailScout Hike Finder.">
+  <title>Favorited Hikes | TrailScout</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/script.js" defer></script>
+  <script src="scripts/hikes-data.js" defer></script>
+  <script src="scripts/hike-filters.js" defer></script>
+  <script src="scripts/storage.js" defer></script>
+  <script src="scripts/favorites.js" defer></script>
+</head>
+
+<body>
+  <div class="page-wrapper home-page">
+    <header class="site-header home-header">
+      <div class="brand">
+        <a href="index.html" class="brand-link">
+          <img src="images/logo.svg" alt="TrailScout Hike Finder logo" class="logo-image">
+          <span class="brand-name">TrailScout Hike Finder</span>
+        </a>
+      </div>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mainNavigation"
+      >
+        Menu
+      </button>
+
+      <nav class="main-navigation" id="mainNavigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="favorites.html" class="active" aria-current="page">Favorited Hikes</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <section class="home-hero favorites-hero">
+      <div class="home-hero-content">
+        <h2>Favorited Hikes</h2>
+        <p>
+          Review the hikes you saved and keep personal notes stored locally in
+          your browser.
+        </p>
+      </div>
+    </section>
+
+    <main class="home-main favorites-main">
+      <aside class="filters-panel" aria-label="Trail filters">
+        <h3>Filters</h3>
+
+        <form class="filters-form" id="filterForm">
+          <div class="filter-group">
+            <label for="difficulty">Difficulty</label>
+            <select id="difficulty" name="difficulty">
+              <option value="">Any Difficulty</option>
+              <option value="Easy">Easy</option>
+              <option value="Moderate">Moderate</option>
+              <option value="Hard">Hard</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="distance">Max Distance</label>
+            <select id="distance" name="distance">
+              <option value="">Any Distance</option>
+              <option value="2">Under 2 miles</option>
+              <option value="5">Under 5 miles</option>
+              <option value="10">Under 10 miles</option>
+              <option value="10+">10+ miles</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="trailType">Trail Type</label>
+            <select id="trailType" name="trailType">
+              <option value="">Any Type</option>
+              <option value="Loop">Loop</option>
+              <option value="Out & Back">Out &amp; Back</option>
+              <option value="Point to Point">Point to Point</option>
+            </select>
+          </div>
+
+          <div class="filter-actions">
+            <button class="reset-button" type="reset">Reset</button>
+          </div>
+        </form>
+      </aside>
+
+      <section class="results-panel favorites-panel" aria-labelledby="favoritesHeading">
+        <div class="results-header">
+          <h3 id="favoritesHeading">Saved Trails</h3>
+          <div class="results-controls">
+            <label class="sort-label" for="sortBy">Sort by</label>
+            <select id="sortBy" name="sortBy" aria-label="Sort hikes">
+              <option value="name-asc">Name (A-Z)</option>
+              <option value="name-desc">Name (Z-A)</option>
+              <option value="distance-asc">Distance (Shortest)</option>
+              <option value="distance-desc">Distance (Longest)</option>
+              <option value="difficulty-asc">Difficulty (Easiest)</option>
+              <option value="difficulty-desc">Difficulty (Hardest)</option>
+            </select>
+            <span class="results-count" id="favoritesCount">0 Saved</span>
+          </div>
+        </div>
+
+        <div class="results-search">
+          <label class="search-label" for="hikeSearch">Search</label>
+          <input
+            class="hike-search-input"
+            type="search"
+            id="hikeSearch"
+            name="hikeSearch"
+            placeholder="Search by name, location, or description..."
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="hike-grid favorites-grid" id="favoritesGrid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer home-footer">
+      <img src="images/logo.svg" alt="" class="footer-logo-image" aria-hidden="true">
+      <p>TrailScout Hike Finder</p>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="about.html">About</a>
+        <a href="index.html">Home</a>
+      </nav>
+      <p>&copy; <span id="currentYear"></span> TrailScout. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
