@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hike Finder App Plan</title>
+    <meta
+        name="description"
+        content="Planning document for the Hike Finder web application."
+    >
+    <link rel="stylesheet" href="styles/site-plan.css">
+</head>
+
+<body>
+    <header>
+        <h1>Hike Finder App Plan</h1>
+        <p>Final project planning document</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>App Name</h2>
+            <p><strong>TrailScout Hike Finder</strong></p>
+        </section>
+
+        <section>
+            <h2>Purpose and Audience</h2>
+
+            <p>
+                TrailScout Hike Finder will help users find hiking trails that
+                match their preferred difficulty, distance, and trail type.
+                Users will be able to browse available hikes, view important
+                trail information, and filter the list to find an appropriate
+                hike.
+            </p>
+
+            <p>
+                The intended audience includes beginner and experienced hikers
+                who want a quick and simple way to compare local hiking trails.
+                The app will be especially useful for people using a mobile
+                device while planning an outdoor activity.
+            </p>
+        </section>
+
+        <section>
+            <h2>Content</h2>
+
+            <p>Each hike will include information such as:</p>
+
+            <ul>
+                <li>Trail name</li>
+                <li>Trail image</li>
+                <li>Location</li>
+                <li>Difficulty level</li>
+                <li>Distance</li>
+                <li>Estimated hiking time</li>
+                <li>Trail type</li>
+                <li>A short trail description</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Dynamic JavaScript Elements</h2>
+
+            <p>
+                JavaScript will be used to store trail information in an array
+                of objects. Each object will contain information about one
+                hiking trail, including its name, location, difficulty,
+                distance, image, and description.
+            </p>
+
+            <p>
+                The app will display the hikes by creating trail cards with
+                JavaScript. Users will be able to select filters for difficulty,
+                maximum distance, and trail type. Event listeners will detect
+                when a filter changes or when the user selects the search
+                button.
+            </p>
+
+            <p>
+                The app will use conditional statements to determine which
+                hikes match the user's selections. The
+                <code>filter()</code> array method will create a list of
+                matching hikes, and <code>forEach()</code> will display each
+                matching hike on the page.
+            </p>
+
+            <p>
+                A favorites button may also allow users to save hikes they are
+                interested in. The app will update the page when a favorite is
+                added or removed.
+            </p>
+        </section>
+
+        <section>
+            <h2>Planned JavaScript Features</h2>
+
+            <ul>
+                <li>An array containing multiple hike objects</li>
+                <li>A function that creates and displays hike cards</li>
+                <li>A function that filters the hikes</li>
+                <li>A function that displays a no-results message</li>
+                <li>DOM selection and modification</li>
+                <li>Click and change event listeners</li>
+                <li>Conditional statements</li>
+                <li><code>filter()</code> and <code>forEach()</code></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Pseudocode</h2>
+
+            <pre>
+Create an array named hikes
+
+For each hike:
+    Store the trail name
+    Store the location
+    Store the difficulty
+    Store the distance
+    Store the estimated time
+    Store the trail type
+    Store the image
+    Store the description
+
+Create a function named displayHikes
+
+Inside displayHikes:
+    Select the hike results container
+    Clear the current results
+
+    If the hike list is empty:
+        Display a message that says no hikes were found
+    Otherwise:
+        Loop through the hike list
+        Create a card for each hike
+        Add the trail information to the card
+        Add the card to the results container
+
+Create a function named filterHikes
+
+Inside filterHikes:
+    Read the selected difficulty
+    Read the selected maximum distance
+    Read the selected trail type
+
+    Filter the hikes array
+
+    For each hike:
+        Check whether the difficulty matches
+        Check whether the distance is within the selected limit
+        Check whether the trail type matches
+
+        If all selected requirements match:
+            Include the hike in the filtered results
+
+    Send the filtered hikes to displayHikes
+
+When the user clicks the search button:
+    Run filterHikes
+
+When the user clicks the reset button:
+    Reset all filter selections
+    Display every hike
+
+When the page first loads:
+    Display every hike
+            </pre>
+        </section>
+
+        <section>
+            <h2>Color Scheme</h2>
+
+            <div class="color-grid">
+                <div class="color-card forest">
+                    <strong>Forest Green</strong>
+                    <span>#2F5D3A</span>
+                    <p>Headers, buttons, and navigation</p>
+                </div>
+
+                <div class="color-card sage">
+                    <strong>Light Sage</strong>
+                    <span>#DDE8D5</span>
+                    <p>Section backgrounds and cards</p>
+                </div>
+
+                <div class="color-card cream">
+                    <strong>Warm Cream</strong>
+                    <span>#F7F3E8</span>
+                    <p>Main page background</p>
+                </div>
+
+                <div class="color-card charcoal">
+                    <strong>Charcoal</strong>
+                    <span>#26322A</span>
+                    <p>Text and borders</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Typography</h2>
+
+            <p>
+                <strong>Headings:</strong> Arial, Helvetica, sans-serif
+            </p>
+
+            <p>
+                <strong>Body text:</strong> Arial, Helvetica, sans-serif
+            </p>
+        </section>
+
+        <section>
+            <h2>Mobile Wireframe</h2>
+
+            <div class="wireframe mobile-wireframe">
+                <img src="../mobile.jpg" alt="Mobile wireframe for TrailScout Hike Finder">
+            </div>
+        </section>
+
+        <section>
+            <h2>Desktop Wireframe</h2>
+
+            <div class="wireframe desktop-wireframe">
+                <img src="../web.jpg" alt="Desktop wireframe for TrailScout Hike Finder">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>TrailScout Hike Finder App Plan</p>
+    </footer>
+</body>
+</html>
