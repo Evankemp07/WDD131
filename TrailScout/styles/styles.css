@@ -1,3 +1,37 @@
+/* ---------- Fonts (self-hosted for performance) ---------- */
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url("../fonts/lato-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url("../fonts/lato-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url("../fonts/roboto-slab-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url("../fonts/roboto-slab-bold.woff2") format("woff2");
+}
+
 /* ---------- Base styles ---------- */
 
 * {

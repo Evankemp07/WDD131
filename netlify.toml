@@ -1,0 +1,19 @@
+[[headers]]
+  for = "/TrailScout/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/TrailScout/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/TrailScout/styles/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/TrailScout/scripts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

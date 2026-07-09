@@ -6,36 +6,15 @@
   <meta name="description" content="Find hiking trails that match your difficulty, distance, and trail type preferences with TrailScout Hike Finder.">
   <title>TrailScout Hike Finder</title>
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    rel="preload"
-    as="style"
-    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"
-    onload="this.onload=null;this.rel='stylesheet'"
-  >
-  <noscript>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"
-    >
-  </noscript>
-  <link rel="preload" href="styles/styles.css" as="style">
+  <link rel="preload" href="fonts/roboto-slab-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles/styles.css">
   <link
     rel="preload"
     as="image"
-    href="images/hero-600w.webp"
     type="image/webp"
-    media="(max-width: 767px)"
-    fetchpriority="high"
-  >
-  <link
-    rel="preload"
-    as="image"
-    href="images/hero-900w.webp"
-    type="image/webp"
-    media="(min-width: 768px)"
+    imagesrcset="images/hero-480w.webp 480w, images/hero-640w.webp 640w, images/hero-768w.webp 768w, images/hero-960w.webp 960w"
+    imagesizes="(min-width: 768px) min(576px, 50vw), 100vw"
     fetchpriority="high"
   >
   <script src="scripts/script.js" defer></script>
@@ -84,22 +63,21 @@
       <picture>
         <source
           type="image/webp"
-          srcset="images/hero-600w.webp 600w, images/hero-900w.webp 900w, images/hero-1200w.webp 1200w"
-          sizes="(min-width: 768px) 50vw, 100vw"
+          srcset="images/hero-480w.webp 480w, images/hero-640w.webp 640w, images/hero-768w.webp 768w, images/hero-960w.webp 960w"
+          sizes="(min-width: 768px) min(576px, 50vw), 100vw"
         >
         <source
           type="image/jpeg"
-          srcset="images/hero-600w.jpg 600w, images/hero-900w.jpg 900w, images/hero-1200w.jpg 1200w"
-          sizes="(min-width: 768px) 50vw, 100vw"
+          srcset="images/hero-480w.jpg 480w, images/hero-640w.jpg 640w, images/hero-768w.jpg 768w, images/hero-960w.jpg 960w"
+          sizes="(min-width: 768px) min(576px, 50vw), 100vw"
         >
         <img
           class="home-hero-image"
-          src="images/hero-900w.jpg"
+          src="images/hero-640w.webp"
           alt="A hiker crossing a rocky alpine ridge below towering mountain cliffs"
           width="1200"
           height="700"
           fetchpriority="high"
-          decoding="async"
         >
       </picture>
     </section>

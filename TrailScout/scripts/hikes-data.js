@@ -311,12 +311,17 @@ function getHikeById(hikeId) {
 }
 
 function hikeImageMarkup(hike) {
+  const id = hike.id;
   return `
     <picture>
-      <source type="image/webp" srcset="${hike.imageWebp}">
+      <source
+        type="image/webp"
+        srcset="images/hikes/${id}-320w.webp 320w, images/hikes/${id}-400w.webp 400w"
+        sizes="(min-width: 900px) 280px, (min-width: 768px) 50vw, 100vw"
+      >
       <img
         class="hike-image"
-        src="${hike.image}"
+        src="images/hikes/${id}-320w.webp"
         alt="${hike.name} trail scenery"
         width="400"
         height="250"
