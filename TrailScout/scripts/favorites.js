@@ -28,12 +28,7 @@ function createFavoriteCard(hike) {
   card.dataset.hikeId = String(hike.id);
 
   card.innerHTML = `
-    <img
-      class="hike-image"
-      src="${hike.image}"
-      alt="${hike.name} trail scenery"
-      loading="lazy"
-    >
+    ${hikeImageMarkup(hike)}
     <div class="hike-body">
       <div class="hike-title-row">
         <div>

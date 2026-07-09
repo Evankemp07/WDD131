@@ -291,6 +291,7 @@ const hikes = [
 
 hikes.forEach((hike) => {
   hike.image = `images/hikes/${hike.id}.jpg`;
+  hike.imageWebp = `images/hikes/${hike.id}-400w.webp`;
 });
 
 const difficultyOrder = {
@@ -307,4 +308,21 @@ const heartIcon = `
 
 function getHikeById(hikeId) {
   return hikes.find((hike) => hike.id === hikeId);
+}
+
+function hikeImageMarkup(hike) {
+  return `
+    <picture>
+      <source type="image/webp" srcset="${hike.imageWebp}">
+      <img
+        class="hike-image"
+        src="${hike.image}"
+        alt="${hike.name} trail scenery"
+        width="400"
+        height="250"
+        loading="lazy"
+        decoding="async"
+      >
+    </picture>
+  `;
 }

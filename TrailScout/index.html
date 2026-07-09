@@ -8,8 +8,36 @@
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  >
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"
+    >
+  </noscript>
+  <link rel="preload" href="styles/styles.css" as="style">
   <link rel="stylesheet" href="styles/styles.css">
+  <link
+    rel="preload"
+    as="image"
+    href="images/hero-600w.webp"
+    type="image/webp"
+    media="(max-width: 767px)"
+    fetchpriority="high"
+  >
+  <link
+    rel="preload"
+    as="image"
+    href="images/hero-900w.webp"
+    type="image/webp"
+    media="(min-width: 768px)"
+    fetchpriority="high"
+  >
   <script src="scripts/script.js" defer></script>
   <script src="scripts/hikes-data.js" defer></script>
   <script src="scripts/hike-filters.js" defer></script>
@@ -22,7 +50,7 @@
     <header class="site-header home-header">
       <div class="brand">
         <a href="index.html" class="brand-link">
-          <img src="images/logo.svg" alt="TrailScout Hike Finder logo" class="logo-image">
+          <img src="images/logo.svg" alt="TrailScout Hike Finder logo" class="logo-image" width="64" height="64">
           <span class="brand-name">TrailScout Hike Finder</span>
         </a>
       </div>
@@ -53,11 +81,27 @@
         </p>
       </div>
 
-      <img
-        class="home-hero-image"
-        src="images/hero.jpg"
-        alt="A hiker crossing a rocky alpine ridge below towering mountain cliffs"
-      >
+      <picture>
+        <source
+          type="image/webp"
+          srcset="images/hero-600w.webp 600w, images/hero-900w.webp 900w, images/hero-1200w.webp 1200w"
+          sizes="(min-width: 768px) 50vw, 100vw"
+        >
+        <source
+          type="image/jpeg"
+          srcset="images/hero-600w.jpg 600w, images/hero-900w.jpg 900w, images/hero-1200w.jpg 1200w"
+          sizes="(min-width: 768px) 50vw, 100vw"
+        >
+        <img
+          class="home-hero-image"
+          src="images/hero-900w.jpg"
+          alt="A hiker crossing a rocky alpine ridge below towering mountain cliffs"
+          width="1200"
+          height="700"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </picture>
     </section>
 
     <main class="home-main">
@@ -136,7 +180,7 @@
     </main>
 
     <footer class="site-footer home-footer">
-      <img src="images/logo.svg" alt="" class="footer-logo-image" aria-hidden="true">
+      <img src="images/logo.svg" alt="" class="footer-logo-image" width="40" height="40" aria-hidden="true">
       <p>TrailScout Hike Finder</p>
       <nav class="footer-links" aria-label="Footer links">
         <a href="about.html">About</a>

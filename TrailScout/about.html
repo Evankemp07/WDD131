@@ -8,8 +8,36 @@
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  >
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"
+    >
+  </noscript>
+  <link rel="preload" href="styles/styles.css" as="style">
   <link rel="stylesheet" href="styles/styles.css">
+  <link
+    rel="preload"
+    as="image"
+    href="images/story-600w.webp"
+    type="image/webp"
+    media="(max-width: 767px)"
+    fetchpriority="high"
+  >
+  <link
+    rel="preload"
+    as="image"
+    href="images/story-800w.webp"
+    type="image/webp"
+    media="(min-width: 768px)"
+    fetchpriority="high"
+  >
   <script src="scripts/script.js" defer></script>
 </head>
 
@@ -18,7 +46,7 @@
     <header class="site-header">
       <div class="brand">
         <a href="index.html" class="brand-link">
-          <img src="images/logo.svg" alt="TrailScout Hike Finder logo" class="logo-image">
+          <img src="images/logo.svg" alt="TrailScout Hike Finder logo" class="logo-image" width="64" height="64">
           <span class="brand-name">TrailScout Hike Finder</span>
         </a>
       </div>
@@ -51,11 +79,27 @@
 
     <main class="main-content">
       <section class="story-section">
-        <img
-          class="story-image"
-          src="images/story.jpg"
-          alt="Backpackers hiking together on a forest trail"
-        >
+        <picture>
+          <source
+            type="image/webp"
+            srcset="images/story-400w.webp 400w, images/story-600w.webp 600w, images/story-800w.webp 800w"
+            sizes="(min-width: 768px) 50vw, 100vw"
+          >
+          <source
+            type="image/jpeg"
+            srcset="images/story-400w.jpg 400w, images/story-600w.jpg 600w, images/story-800w.jpg 800w"
+            sizes="(min-width: 768px) 50vw, 100vw"
+          >
+          <img
+            class="story-image"
+            src="images/story-800w.jpg"
+            alt="Backpackers hiking together on a forest trail"
+            width="800"
+            height="600"
+            fetchpriority="high"
+            decoding="async"
+          >
+        </picture>
 
         <div class="story-text">
           <h3>Our Story</h3>
@@ -116,7 +160,7 @@
     </main>
 
     <footer class="site-footer">
-      <img src="images/logo.svg" alt="" class="footer-logo-image" aria-hidden="true">
+      <img src="images/logo.svg" alt="" class="footer-logo-image" width="40" height="40" aria-hidden="true">
       <p>TrailScout Hike Finder</p>
       <p>&copy; <span id="currentYear"></span> TrailScout. All rights reserved.</p>
     </footer>
